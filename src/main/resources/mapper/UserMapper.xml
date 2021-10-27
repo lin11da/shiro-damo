@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+
+    <insert id="register" parameterType="com.example.pojo.User">
+        insert into `test-demo`.user(userid, number, password,salt, name, updatetime, createtime)
+        VALUES (#{userid},#{number},#{password},#{salt},#{name},#{updatetime},#{createtime})
+    </insert>
+    
+    <select id="findbyUserName" parameterType="String" resultType="com.example.pojo.User">
+        select * from `test-demo`.user where number = #{number}
+    </select>
+
+
+</mapper>

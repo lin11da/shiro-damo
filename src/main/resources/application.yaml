@@ -1,0 +1,19 @@
+
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE}
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/test-demo?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+
+
+mybatis:
+  type-aliases-package: com.example.pojo
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 8888
